@@ -1,0 +1,23 @@
+package com.kh.variable;
+
+public class C_Cast {
+	public void rule1() {
+		int num = 'a';
+		 //4byte <- 2byte  : 자동 형변환
+		System.out.println("num : " + num);		
+		
+		char c = 65;
+	    //2byte <- 4byte  : 65는 int형이지만 리터럴 (값 자체)라서 가능!!!
+		System.out.println("c : " + c);
+		
+		//char c2 = num;
+		//이건 불가능 -> num은 리터럴 아니고 변수이기 때문에 안됨.
+		
+		char c2 = (char)num;
+		// (char)을 붙여줌으로 써 강제 형변환 해줌!
+		System.out.println("c2 : " + c2);
+		
+		int num2 = -97;
+		System.out.println("num2 : " + num2);
+	}
+}

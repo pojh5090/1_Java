@@ -1,0 +1,13 @@
+package com.kh.variable;
+
+import java.util.Scanner;
+
+public class E_KeyboardInput {
+	public void input1() {
+		Scanner sc = new Scanner(System.in);
+		
+		String value = sc.next();  //변수(value)를 만들어 줘야 '입력' 데이터가 저장됨.
+		
+		System.out.println("내가 입력한 값: " + value);
+	}
+}

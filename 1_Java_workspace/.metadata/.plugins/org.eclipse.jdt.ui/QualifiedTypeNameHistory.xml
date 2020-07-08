@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.kh.variable.A_Variable"/>
+<fullyQualifiedTypeName name="com.kh.variable.B_Constant"/>
+<fullyQualifiedTypeName name="com.kh.variable.C_Cast"/>
+<fullyQualifiedTypeName name="com.kh.variable.D_Print"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="com.kh.operator.D_Comparison"/>
+<fullyQualifiedTypeName name="com.kh.operator.G_Triple"/>
+</qualifiedTypeNameHistroy>

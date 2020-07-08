@@ -1,0 +1,17 @@
+package com.kh.operator;
+
+import java.util.Scanner;
+
+public class G_Triple {
+	public void method1() {
+		// 입력한 정수가 양수인지 아닌지 판별
+		Scanner sc = new Scanner(System.in);
+		System.out.print("정수 하나 입력 : ");
+		int num = sc.nextInt();
+		
+		
+		String result = num > 0 ? "양수다" : "양수가 아니다";
+		
+		System.out.println(num + "는 " + result);
+	}
+}

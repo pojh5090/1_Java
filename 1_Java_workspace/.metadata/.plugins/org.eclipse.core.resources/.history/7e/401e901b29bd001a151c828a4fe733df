@@ -1,0 +1,11 @@
+package com.kh.first;
+
+public class HelloWorld { //클래스
+	public static void main(String[] args) {
+		System.out.println("Hello World!");
+	}
+	
+	// 한 줄 주석
+	/* 여러줄 주석 ! */ 
+//	주석 단축기 연습   (ctrl + / 누르기 )
+}

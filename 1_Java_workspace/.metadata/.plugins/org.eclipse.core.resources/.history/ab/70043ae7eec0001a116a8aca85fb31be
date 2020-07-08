@@ -1,0 +1,13 @@
+package com.kh.run;
+
+import com.kh.operator.B_InDecrease;
+
+public class Run {
+	public static void main(String[] args) {
+//		A_LogicalNegation al = new A_LogicalNegation();		
+//		al.method();
+		
+		B_InDecrease bi = new B_InDecrease();
+		bi.method2();
+	}
+}

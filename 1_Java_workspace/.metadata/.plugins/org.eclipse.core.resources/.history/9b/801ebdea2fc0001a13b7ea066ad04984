@@ -1,0 +1,12 @@
+package com.kh.variable;
+
+import java.util.Scanner;
+
+public class E_KeyboardInput {
+	public void input1() {
+		Scanner sc = new Scanner(System.in);
+		
+		sc.next();
+		//sc.nextInt();
+	}
+}

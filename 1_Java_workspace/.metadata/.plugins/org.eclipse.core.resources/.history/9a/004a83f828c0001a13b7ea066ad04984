@@ -1,0 +1,26 @@
+package com.kh.variable;
+
+public class D_Print {
+	public void printlnExample() {
+		System.out.println("안녕하세요");
+		System.out.println("반갑습니다");
+		System.out.println();  //줄바꿈만 하는 것.
+	}
+	
+	public void printExample() {
+		System.out.print("안녕하세요");
+		System.out.print("반갑습니다");
+		//System.out.print();   ->이건 ()안에 꼭 있어야함 ..
+	}
+	
+	public void printfExample() {
+		String str1 = "안녕하세요";
+		String str2 = "반갑습니다";
+		
+		//System.out.printf(format, args)
+		//                 포맷터 지정 , 포맷터에 맞게 값 대입
+		System.out.printf("%s, 박신우 입니다. %s.\n", str1, str2);
+		
+	}
+	
+}
