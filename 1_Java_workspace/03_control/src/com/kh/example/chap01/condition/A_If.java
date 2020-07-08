@@ -39,16 +39,17 @@ public class A_If {
 		int num = sc.nextInt();
 		
 		if(num % 2 == 0) {
-			System.out.println("짝수 입니다.");
+			System.out.println("짝수 입니다.!");
 		} 
 		if(num % 2 != 0) {
-			System.out.println("홀수 입니다.");
+			System.out.println("홀수 입니다.!");
 		}
 		
 	}
 	
 	public void method3() {
 		//입력한 숫자가 1~10사이의 숫자인지 확인
+		
 		Scanner sc = new Scanner(System.in);
 		System.out.print("숫자를 입력하세요 : ");
 		int num = sc.nextInt();
