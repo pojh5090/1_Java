@@ -34,7 +34,7 @@ public class A_Variable {  //기능 클래스
 		iNum = 4;
 		lNum = 8L;
 		
-		fNum = 4.0f;
+		fNum = 4.478f;
 		dNum = 8.0;
 		
 		System.out.println("isTrue의 값 : " + isTrue);
