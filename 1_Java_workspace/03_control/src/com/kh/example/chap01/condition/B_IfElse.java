@@ -62,4 +62,19 @@ public class B_IfElse {
 			System.out.println("범위 밖입니다.");
 		}
 	}
+	
+	public void method4() {
+		//이름 비교하기
+		Scanner sc = new Scanner(System.in);
+		System.out.print("이름을 입력하세요 : ");
+		
+		String name = sc.next();
+		
+		if(name.equals("강진희")) {
+			System.out.println("본인입니다.");
+		} else {
+			System.out.println("본인이 아닙니다.");
+		}
+	}
+	
 }
