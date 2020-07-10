@@ -221,4 +221,93 @@ public class ControlPractice {
 		System.out.println(num1 + " " + op + " " + num2 + " = " + result);
 	}
 	
+	public void practice9() {
+		//6회 이상 결석시 fail
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("중간 고사 점수 : ");
+		int mid = sc.nextInt();
+		double midj = mid * 0.2;
+		
+		System.out.print("기말 고사 점수 : ");
+		int fin = sc.nextInt();
+		double finj = fin * 0.3;
+		
+		System.out.print("과제 점수 : ");
+		int hom = sc.nextInt();
+		double homj = hom * 0.3;
+		
+		System.out.print("출석 회수: ");
+		int att = sc.nextInt();
+		double attj = att;
+		
+		double sum = midj + finj + homj + attj;
+		
+		System.out.println("==========결과==========");
+		
+		if(att >= 15 ) {
+			System.out.println("중간 고사 점수(20) : " + midj);
+			System.out.println("기말 고사 점수(30) : " + finj);
+			System.out.println("과제 점수       (30) : " + homj);
+			System.out.println("출석 점수       (20) : " + attj);
+			System.out.println("총점    : " + sum);
+			if(sum >= 70) {
+				System.out.println("Pass");
+			} else {
+				System.out.println("Fail [점수 미달]");
+			}
+		} else {
+			System.out.println("Fail [출석 회수 부족(" + att + "/20)]");
+		}
+	}
+	
+	public void practice10() {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("실행할 기능을 선택하세요.");
+		System.out.println("1. 메뉴 출력");
+		System.out.println("2. 짝수/홀수");
+		System.out.println("3. 합격/불합격");
+		System.out.println("4. 계절");
+		System.out.println("5. 로그인");
+		System.out.println("6. 권한 확인");
+		System.out.println("7. BMI");
+		System.out.println("8. 계산기");
+		System.out.println("9. P/F");
+		System.out.print("선택 : ");		
+		int menu = sc.nextInt();
+		
+		switch(menu) {
+		case 1 :
+			practice1();  //호출한거임!
+			break;
+		case 2 :
+			practice2();  //호출한거임!
+			break;
+		case 3 :
+			practice3();  //호출한거임!
+			break;
+		case 4 :
+			practice4();  //호출한거임!
+			break;
+		case 5 :
+			practice5();  //호출한거임!
+			break;
+		case 6 :
+			practice6();  //호출한거임!
+			break;
+		case 7 :
+			practice7();  //호출한거임!
+			break;
+		case 8 :
+			practice8();  //호출한거임!
+			break;
+		case 9 :
+			practice9();  //호출한거임!
+			break;
+		default :
+			System.out.println("번호를 다시 입력해주세요.");
+		}	
+	}
+	
 }
