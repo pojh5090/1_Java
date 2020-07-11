@@ -12,7 +12,8 @@ public class Run {
 		B_While bw = new B_While();
 		//bw.method1_1();
 		//bw.method8();
-		bw.method11();
+		//bw.method9();
+		bw.method10();
 	}
 
 }

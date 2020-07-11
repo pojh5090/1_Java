@@ -156,8 +156,60 @@ public class B_While {
 		}
 	}
 	
-	public void method9() {}
-	public void method10() {}
+	public void method9() {
+		//한 줄에 별 표(*)가 5 번 출력되는데 그 줄은 사용자가 입력한 수 만큼 출력
+		//ex -> 3
+		//*****
+		//*****
+		//*****
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("줄 수 입력: ");
+		int row = sc.nextInt();
+		int i = 0;
+		while(i < row) {
+			System.out.println("*****");
+			i++;
+		}
+		
+		
+		
+	}
+	public void method10() {
+		//한 줄에 별표 문자를 입력한 줄 수와 칸 수 만큼 입력
+		//단, 줄 수와 칸 수가 일치하는 위치에는 줄 번호에 대한 정수 출력
+		//ex
+		// 줄 수 : 4, 칸 수 : 5
+		// 1****
+		// *2***
+		// **3**
+		// ****4
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("줄 수 입력 : ");
+		int row = sc.nextInt();
+		
+		System.out.print("칸 수 입력 : ");
+		int kan = sc.nextInt();
+		
+		int i = 1;
+		
+		while(i <= row) {
+			int j = 1;
+			while(j <= kan) {
+				if(i == j) {
+					System.out.print(i);
+				} else {
+					System.out.print("*");
+				}
+				j++;
+			}
+			System.out.println();
+			i++;
+		}
+		
+	}
 	
 	public void method11() {
 		Scanner sc = new Scanner(System.in);
