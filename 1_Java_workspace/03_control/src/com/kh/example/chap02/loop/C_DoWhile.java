@@ -20,13 +20,11 @@ public class C_DoWhile {
 //		null.equals 처럼 실행하라는거니까 오류..	
 		
 		// 2. do~while
-		String str = null;
+		String str = null;  //여기서는 가능, str의 실제 문자열로 덮어쓰였기 때문.
 		do {
 			System.out.print("문자열을 입력하세요 : ");
 			str = sc.nextLine();
 			System.out.println("내가 입력한 문자열 : " + str);
-		} while(!str.equals("exit"));
-		
-		
+		} while(!str.equals("exit"));			
 	}
 }

@@ -236,24 +236,41 @@ public class B_While {
 	public void method12() {
 		Scanner sc = new Scanner(System.in);
 		
-		while(true) {  // while(true) 안에 switch문을 넣으면 method11처럼 실행됨.
-			// 무한 반복문!
+//		while(true) {  // while(true) 안에 switch문을 넣으면 method11처럼 실행됨.
+//			// 무한 반복문!
+//			System.out.println("1. 1~5 출력");
+//			System.out.println("2. 5~1 출력");
+//			System.out.println("3. 1~10 중 홀수만 출력");
+//			System.out.println("9. 종료");
+//			System.out.print("메뉴 선택 : ");
+//			
+//			int menu = sc.nextInt();
+//			switch(menu) {
+//			case 1 : method1(); break;
+//			case 2 : method2(); break;
+//			case 3 : method3(); break;
+//			case 9 : System.out.println("종료합니다."); return;
+//			//return은 나를 불러준 메소드(=main) 에게 되돌아가는것임.
+//			//그러나 무조건 main 메소드로 돌아가는것은 아님.			
+//			default: System.out.println("잘못 입력하셨습니다.");
+//			}
+//		}
+		int menu = 0;
+		do {
 			System.out.println("1. 1~5 출력");
 			System.out.println("2. 5~1 출력");
 			System.out.println("3. 1~10 중 홀수만 출력");
 			System.out.println("9. 종료");
 			System.out.print("메뉴 선택 : ");
-			
-			int menu = sc.nextInt();
+				
+			menu = sc.nextInt();
 			switch(menu) {
 			case 1 : method1(); break;
 			case 2 : method2(); break;
 			case 3 : method3(); break;
-			case 9 : System.out.println("종료합니다."); return;
-			//return은 나를 불러준 메소드(=main) 에게 되돌아가는것임.
-			//그러나 무조건 main 메소드로 돌아가는것은 아님.			
+			case 9 : System.out.println("종료합니다."); return;	
 			default: System.out.println("잘못 입력하셨습니다.");
 			}
-		}
+		} while(menu != 9);		
 	}
 }

@@ -1,5 +1,6 @@
 package com.kh.example.chap02.run;
 
+import com.kh.example.chap02.LoopPractice;
 import com.kh.example.chap02.loop.A_For;
 import com.kh.example.chap02.loop.B_While;
 import com.kh.example.chap02.loop.C_DoWhile;
@@ -18,7 +19,13 @@ public class Run {
 		//bw.method12();
 		
 		C_DoWhile cd = new C_DoWhile();
-		cd.method1();
+		//cd.method1();
+		
+		LoopPractice lp = new LoopPractice();
+		//lp.method2();
+		//lp.method5();
+		//lp.method6();
+		lp.method14();
 	}
 
 }
