@@ -2,6 +2,7 @@ package com.kh.example.chap02.run;
 
 import com.kh.example.chap02.loop.A_For;
 import com.kh.example.chap02.loop.B_While;
+import com.kh.example.chap02.loop.C_DoWhile;
 
 public class Run {
 
@@ -13,7 +14,11 @@ public class Run {
 		//bw.method1_1();
 		//bw.method8();
 		//bw.method9();
-		bw.method10();
+		//bw.method10();
+		//bw.method12();
+		
+		C_DoWhile cd = new C_DoWhile();
+		cd.method1();
 	}
 
 }
