@@ -1,5 +1,6 @@
 package com.kh.practice.array;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ArrayPractice {
@@ -300,35 +301,39 @@ public class ArrayPractice {
 		System.out.print("배열의 크기를 입력하세요 : ");
 		int num = sc.nextInt();
 		
+		sc.nextLine();
+		
 		String[] arr = new String[num];
 		
 		for(int i = 0; i < num; i++) {
-			System.out.print(i + "번째 문자열 : ");
-			arr[i] = sc.next();
+			System.out.print(i + 1 + "번째 문자열 : ");
+			arr[i] = sc.nextLine();
 		}		
 		
-		System.out.print("더 값을 입력하시겠습니까?(y/n) : ");
-		char ch = sc.next().charAt(0);
-
-		if(ch == 'y') {
-			System.out.print("더 입력하고 싶은 개수 : ");
-			int num2 = sc.nextInt();
-			//String arr2[] = new int[num]
+		String str = null;
+		do {
+			System.out.print("더 값을 입력하시겠습니까?(Y/N) : ");
+			str = sc.nextLine();
 			
-		} else {
-			//출력
-		}
-//		do {
-//			System.out.print("더 값을 입력 하시겠습니까?(Y/N) : ");
-//			ch = sc.next().charAt(0);
-//			switch(ch) {
-//			case 'y' : 
-//				System.out.print("더 입력하고 싶은 개수 : ");
-//				int num2 = sc.nextInt();
-//				int[] arr2 = new int[num2];
-//				for(int i = num + 1; i < num1 + num2; )
-//			case 'n' :
-//			}
-//		} while (ch != 'n');
+			if(str.toUpperCase().equals("Y")) {
+				System.out.print("더 입력하고 싶은 개수 : ");
+				int num2 = sc.nextInt();
+				String[] arr2 = new String[arr.length + num2];
+				System.arraycopy(arr, 0, arr2, 0, arr.length);
+				
+				sc.nextLine();
+				
+				for(int i = arr.length; i < arr2.length; i++) {
+					System.out.print(i + 1 + "번째 문자열 : ");
+					arr2[i] = sc.nextLine();
+				}
+				
+				arr = arr2;   //주소 넘겨줌
+  			}
+			
+		} while(!str.toUpperCase().equals("N"));
+		
+		System.out.println(Arrays.toString(arr));
+		
 	}
 }
