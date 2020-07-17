@@ -114,6 +114,7 @@ public class DimensionalArray {
 		iArr[0] = new int[2];
 		iArr[1] = new int[4];
 		iArr[2] = new int[3];
+		
 		for(int i = 0; i < iArr.length; i++) {
 			for(int j = 0; j < iArr[i].length; j++) {
 				System.out.printf("%d ", iArr[i][j]);
