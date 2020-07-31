@@ -28,9 +28,10 @@ public class LibraryController {
 	}
 	public Book[] searchBook(String keyword) {
 		Book[] nList = new Book[5];
+		int count = 0;
 		for(int i = 0; i < bList.length; i++) {
-			if(bList[i].getTitle().equals(keyword)) {
-				nList[i] = bList[i];
+			if(bList[i].getTitle().contains(keyword)) {
+				nList[count++] = bList[i];
 			}
 		}
 		return nList;

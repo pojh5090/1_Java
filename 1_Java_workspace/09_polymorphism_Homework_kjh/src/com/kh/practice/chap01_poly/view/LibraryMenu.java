@@ -21,6 +21,7 @@ public class LibraryMenu {
 		char gender = sc.next().charAt(0);
 		
 		Member m = new Member(name, age, gender);
+		lc.insertMember(m);
 		
 		int menu = 0;
 		while(true) {
@@ -34,7 +35,7 @@ public class LibraryMenu {
 			menu = sc.nextInt();
 			
 			switch(menu) {
-			case 1 : lc.myInfo(); break;
+			case 1 : System.out.println(lc.myInfo()); break;
 			case 2 : selectAll(); break;
 			case 3 : searchBook(); break;
 			case 4 : rentBook(); break;
@@ -58,10 +59,8 @@ public class LibraryMenu {
 		String key = sc.next();			
 		Book[] searchList = lc.searchBook(key);
 		for(int i = 0; i < searchList.length; i++) {
-			if(searchList[i] instanceof CookBook) {
-				System.out.println(((CookBook)searchList[i]).toString());
-			} else {
-				System.out.println(((AniBook)searchList[i]).toString());
+			if(searchList[i] != null) {
+				System.out.println(searchList[i]);
 			}
 		}
 	}
