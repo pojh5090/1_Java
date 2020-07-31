@@ -29,7 +29,7 @@ public class BookMenu {
 			case 2 : selectList(); break;
 			case 3 : searchBook(); break;
 			case 4 : deleteBook(); break;
-//			case 5 : ascBook(); break;
+			case 5 : ascBook(); break;
 			case 9 : System.out.println("프로그램을 종료합니다."); return;
 			default : System.out.println("잘못 입력하였습니다. 다시 입력해주세요"); 
 			}
@@ -96,12 +96,20 @@ public class BookMenu {
 		String dauthor = sc.next();
 		
 		Book remove = bc.deleteBook(dtitle, dauthor);
+		
 		if(remove != null) {
 			System.out.println("성공적으로 삭제되었습니다.");
 		} else {
 			System.out.println("삭제할 도서를 찾지 못했습니다.");
 		}
+	}	
+	public void ascBook() {
+		int result = bc.ascBook();
+		if(result == 1) {
+			System.out.println("정렬에 성공하였습니다.");
+		} else {
+			System.out.println("정렬에 실패하였습니다.");
+		}
 	}
-	/////////////여기 에러남..////////////////
 	
 }

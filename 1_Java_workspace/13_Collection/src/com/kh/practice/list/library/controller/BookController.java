@@ -1,7 +1,7 @@
 package com.kh.practice.list.library.controller;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Collections;
 
 import com.kh.practice.list.library.model.vo.Book;
 
@@ -31,18 +31,18 @@ public class BookController {
 		return (ArrayList)searchList;
 	}
 	
-	public Book deleteBook(String title, String author){
+	public Book deleteBook(String title, String author) {
 		Book removeBook = null;
+
 		for(int i = 0; i < booklist.size(); i++) {
-			if(booklist.get(i).getTitle().equals(title)) {
-				if(booklist.get(i).getAuthor().equals(author))
-					 removeBook = booklist.get(i);
-					booklist.remove(i);
+			if(((Book)booklist.get(i)).getTitle().equals(title) && ((Book)booklist.get(i)).getAuthor().equals(author)) {
+				removeBook = (Book)booklist.remove(i);
 			}
 		}
 		return removeBook;	
 	}
 	public int ascBook() {
-		return 0;
+		Collections.sort(booklist);
+		return 1;
 	}
 }

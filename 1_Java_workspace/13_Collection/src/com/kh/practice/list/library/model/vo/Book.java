@@ -2,7 +2,7 @@ package com.kh.practice.list.library.model.vo;
 
 import com.kh.example.list.model.vo.Student;
 
-public class Book {
+public class Book implements Comparable<Book>{
 	private String title;
 	private String author;
 	private String category;
@@ -61,8 +61,13 @@ public class Book {
 		}
 		return true;
 	}
-	public int compareTo(Object o) {
-		return 0;
+	@Override
+	public int compareTo(Book o) {
+		String otherTitle = o.title;
+		
+		int result = title.compareTo(otherTitle);
+		
+		return result;
 	}
 	
 }
