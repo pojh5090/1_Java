@@ -48,7 +48,7 @@ public class Server {
 		
 //		2) 서버용 소켓 객체 생성 후 포트와 결합
 		try {
-			ServerSocket server = new ServerSocket();
+			ServerSocket server = new ServerSocket(port);
 			
 //			3) 클라이언트 쪽에서 접속 요청이 오길 기다림
 			System.out.println("클라이언트의 요청을 기다리고 있습니다.");
