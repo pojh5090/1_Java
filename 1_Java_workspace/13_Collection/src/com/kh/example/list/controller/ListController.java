@@ -75,7 +75,7 @@ public class ListController {
 		System.out.println("list : " + list);
 		
 		//subList(int index1 , int index2) : index1번째부터 index2번째 까지의 리스트 반환
-		System.out.println(list.subList(2, 5));
+		System.out.println(list.subList(2, 5)); //5포함x
 		
 		//contains(Object o) : o가 리스트에 존재한다면 true반환
 		//indexOf(Object o) : o가 리스트에 위치하는 인덱스 반환

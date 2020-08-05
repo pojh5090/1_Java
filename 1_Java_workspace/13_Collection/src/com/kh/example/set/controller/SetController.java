@@ -48,6 +48,7 @@ public class SetController {
 		set4.addAll(set2);
 		set4.add(new Dog("봄이", 6.1)); //추가 안되었음! 이유 : 로이랑 무게가 같아서 같은 객체로 인식
 		System.out.println(set4); 
+		System.out.println(set4.size());
 		
 		Iterator<Dog> it = set4.iterator();
 		while(it.hasNext()) {
