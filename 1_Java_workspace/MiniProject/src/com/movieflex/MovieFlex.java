@@ -3,7 +3,6 @@ package com.movieflex;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -64,12 +63,13 @@ public class MovieFlex {
             }
             
             if(idd.equals("user01") && pww.equals("pass01")) {
-            	JOptionPane.showMessageDialog(null, "로그인 성공", "MovieFlex", JOptionPane.DEFAULT_OPTION);
-            	new newWindow();  //->성공시 메인화면 보이는 코드!
+            	JOptionPane.showMessageDialog(null, "user01님 환영합니다!", "MovieFlex", JOptionPane.DEFAULT_OPTION);
+            	new MainFrame();  //->성공시 메인화면 보이는 코드!
+            	main.dispose();
             	return;
             }
             
-            JOptionPane.showMessageDialog(null, "로그인 실패", "MovieFlex", JOptionPane.DEFAULT_OPTION);
+            JOptionPane.showMessageDialog(null, "아이디와 비밀번호를 다시 입력해 주세요.", "MovieFlex", JOptionPane.DEFAULT_OPTION);
             id.setText("");
             pass.setText("");
          }
@@ -83,39 +83,4 @@ public class MovieFlex {
       main.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       main.setLocationRelativeTo(null);  
    }
-}
-////여기 새로운 창 띄워지는 곳!!////
-class newWindow extends JFrame {
-	newWindow() {
-		setLayout(null);
-		setTitle("반갑습니다! MovieFlex 입니다");
-		
-		JPanel NewContainer = new JPanel();
-
-		setContentPane(NewContainer);
-		
-		//맨위 배너
-		JPanel BigTitle = new JPanel();
-		BigTitle.setPreferredSize(new Dimension(900, 80));
-		BigTitle.setBackground(Color.BLACK);
-	    JLabel titleLabel = new JLabel("MOVIE FLEX");
-	    titleLabel.setFont(new Font("Serif", Font.BOLD, 50));
-	    titleLabel.setForeground(Color.red);
-	    titleLabel.setHorizontalAlignment(JLabel.CENTER);
-	    
-	    //장르선택-콤보박스
-	    String[] genreList = {"장르", "액션", "코미디", "로맨스", "공포", "애니", "다큐" };
-	    JComboBox<String> genreCombo = new JComboBox<String>(genreList);
-	    genreCombo.setBounds(10, 100, 150, 50);
-	    
-	    BigTitle.add(titleLabel);
-		NewContainer.add(BigTitle);
-		NewContainer.add(genreCombo);
-		
-		setSize(900, 900);
-		setResizable(false);
-		setVisible(true);
-		setLocationRelativeTo(null);  
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	}
 }
