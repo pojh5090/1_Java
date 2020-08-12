@@ -15,6 +15,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+import javax.swing.border.LineBorder;
 
 public class Top5Panel extends JPanel{
    private JFrame frame;
@@ -23,6 +24,11 @@ public class Top5Panel extends JPanel{
       Image resizedImage = img.getScaledInstance(resizedWidth,  resizedHeight, java.awt.Image.SCALE_SMOOTH);
       return new ImageIcon(resizedImage);
    }   
+   //버튼 테두리
+   private LineBorder line = new LineBorder(Color.black,2,false);
+   //마우스 이벤트
+   private MouseEv me = new MouseEv();
+   
    public Top5Panel(JFrame frame3) {
 
       JPanel BigTitle = new JPanel();
@@ -59,25 +65,32 @@ public class Top5Panel extends JPanel{
       //순위 추가
       rank1 = new JLabel("1위");
       rank1.setFont(font2);
+      rank1.setForeground(Color.white);
       
       rank2 = new JLabel("2위");
       rank2.setFont(font2);
+      rank2.setForeground(Color.white);
       
       rank3 = new JLabel("3위");
       rank3.setFont(font2);
+      rank3.setForeground(Color.white);
       
       rank4 = new JLabel("4위");
       rank4.setFont(font2);
+      rank4.setForeground(Color.white);
       
       rank5 = new JLabel("5위");
       rank5.setFont(font2);
+      rank5.setForeground(Color.white);
       
       // 어벤져스
       panel1 = new JPanel();
       ImageIcon actIcon1 = new ImageIcon("images/a_avengers.jpg");      
       act1 = new JButton(); //버튼에 글자 추가
-      act1.setBackground(Color.black);
       act1.setSize(200,200);
+      act1.setBorder(line);
+      act1.addMouseListener(me);
+      panel1.setBackground(Color.black);
       panel1.add(rank1);
       panel1.add(act1);
       panel1.setBounds(100, 150, 200, 225);      
@@ -89,8 +102,10 @@ public class Top5Panel extends JPanel{
       panel2 = new JPanel();
       ImageIcon actIcon2 = new ImageIcon("images/r_lala.jpg");
       act2 = new JButton();
-      act2.setBackground(Color.black);
       act2.setSize(200,200);
+      act2.setBorder(line);
+      act2.addMouseListener(me);
+      panel2.setBackground(Color.black);
       panel2.add(rank2);
       panel2.add(act2);    
       panel2.setBounds(370, 150, 200, 225);    
@@ -101,8 +116,10 @@ public class Top5Panel extends JPanel{
       panel3 = new JPanel();
       ImageIcon actIcon3 = new ImageIcon("images/an_kung.jpg");
       act3 = new JButton();
-      act3.setBackground(Color.black);
       act3.setSize(200,200);
+      act3.setBorder(line);
+      act3.addMouseListener(me);
+      panel3.setBackground(Color.black);
       panel3.add(rank3);
       panel3.add(act3);   
       panel3.setBounds(650, 150, 200, 225);    
@@ -113,8 +130,10 @@ public class Top5Panel extends JPanel{
       panel4 = new JPanel();
       ImageIcon actIcon4 = new ImageIcon("images/d_sori.jpg");
       act4 = new JButton();
-      act4.setBackground(Color.black);
       act4.setSize(200,200);
+      act4.setBorder(line);
+      act4.addMouseListener(me);
+      panel4.setBackground(Color.black);
       panel4.add(rank4);
       panel4.add(act4);
       panel4.setBounds(200, 400, 200, 225);   
@@ -125,8 +144,10 @@ public class Top5Panel extends JPanel{
       panel5 = new JPanel();
       ImageIcon actIcon5 = new ImageIcon("images/r_about.jpg");
       act5 = new JButton();
-      act5.setBackground(Color.black);
       act5.setSize(200,200);
+      act5.setBorder(line);
+      act5.addMouseListener(me);
+      panel5.setBackground(Color.black);
       panel5.add(rank5);
       panel5.add(act5);    
       panel5.setBounds(500, 400, 200, 225);  
@@ -363,7 +384,7 @@ public class Top5Panel extends JPanel{
 
 
       JButton back = new JButton("뒤로가기");
-      back.setBounds(10, 800, 100, 40);
+      back.setBounds(80, 700, 100, 40);
       back.addActionListener(new ActionListener() {
 
          @Override

@@ -10,9 +10,17 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+import javax.swing.border.LineBorder;
+
+import com.movieflex.ActionPanel.BigAven;
+import com.movieflex.ActionPanel.BigBer;
+import com.movieflex.ActionPanel.BigBunno;
+import com.movieflex.ActionPanel.BigMission;
+import com.movieflex.ActionPanel.BigUnder;
 
 public class ComedyPanel extends JPanel{
    private JFrame frame;
@@ -21,6 +29,14 @@ public class ComedyPanel extends JPanel{
        Image resizedImage = img.getScaledInstance(resizedWidth,  resizedHeight, java.awt.Image.SCALE_SMOOTH);
        return new ImageIcon(resizedImage);
    }   
+   //버튼 테두리
+   private LineBorder line = new LineBorder(Color.black,2,false);
+   //마우스 이벤트
+   private MouseEv me = new MouseEv();
+   
+   //폰트
+   Font font1 = new Font("NanumGothic", Font.BOLD, 13);
+   public int number = 0;
    public ComedyPanel(JFrame frame3) {
       
       this.frame = frame3;
@@ -31,9 +47,6 @@ public class ComedyPanel extends JPanel{
 
       JButton act1, act2, act3, act4, act5;
       JPanel panel1, panel2, panel3, panel4, panel5;
-
-    //폰트
-      Font font1 = new Font("NanumGothic", Font.BOLD, 13);
       
     //TextArea
       JTextArea explain = new JTextArea();
@@ -42,15 +55,22 @@ public class ComedyPanel extends JPanel{
        explain.setEditable(false);
        explain.setFont(font1); 
        explain.setBackground(new Color(197,192,189));
+       
+       //자세히 보기 버튼
+       JButton closer = new JButton("자세히 보기");
+       closer.setFont(font1);
+       closer.setBounds(720, 700, 110, 40);
      
        //테드
        panel1 = new JPanel();
        ImageIcon actIcon1 = new ImageIcon("images/c_ted2.jpg");
        act1 = new JButton();
-       act1.setBackground(Color.black);
        act1.setSize(200,200);
+       act1.setBorder(line);            
+       act1.addMouseListener(me);
+       panel1.setBackground(Color.black);
        panel1.add(act1);
-       panel1.setBounds(100, 150, 200, 200);      
+       panel1.setBounds(100, 150, 200, 210);      
        int offset1 = act1.getInsets().left;
        act1.setIcon(resizeIcon(actIcon1, act1.getWidth() - offset1, act1.getHeight() - offset1));
        
@@ -58,8 +78,10 @@ public class ComedyPanel extends JPanel{
        panel2 = new JPanel();
        ImageIcon actIcon2 = new ImageIcon("images/c_mr.jpg");
        act2 = new JButton();
-       act2.setBackground(Color.black);
        act2.setSize(200,200);
+       act2.setBorder(line);            
+       act2.addMouseListener(me);
+       panel2.setBackground(Color.black);
        panel2.add(act2);
        panel2.setBounds(370, 150, 200, 200);      
        int offset2 = act2.getInsets().left;
@@ -69,10 +91,12 @@ public class ComedyPanel extends JPanel{
        panel3 = new JPanel();
        ImageIcon actIcon3 = new ImageIcon("images/c_sidong.jpg");
        act3 = new JButton();
-       act3.setBackground(Color.black);
        act3.setSize(200,200);
+       act3.setBorder(line);            
+       act3.addMouseListener(me);
+       panel3.setBackground(Color.black);
        panel3.add(act3);
-       panel3.setBounds(650, 150, 200, 200);   
+       panel3.setBounds(650, 150, 200, 210);   
        int offset3 = act3.getInsets().left;
        act3.setIcon(resizeIcon(actIcon3, act3.getWidth() - offset3, act3.getHeight() - offset3));
 
@@ -80,10 +104,12 @@ public class ComedyPanel extends JPanel{
        panel4 = new JPanel();
        ImageIcon actIcon4 = new ImageIcon("images/c_yes.jpg");
        act4 = new JButton();
-       act4.setBackground(Color.black);
        act4.setSize(200,200);
+       act4.setBorder(line);            
+       act4.addMouseListener(me);
+       panel4.setBackground(Color.black);
        panel4.add(act4);
-       panel4.setBounds(200, 400, 200, 200);   
+       panel4.setBounds(200, 400, 200, 210);   
        int offset4 = act4.getInsets().left;
        act4.setIcon(resizeIcon(actIcon4, act4.getWidth() - offset4, act4.getHeight() - offset4));
        
@@ -91,10 +117,12 @@ public class ComedyPanel extends JPanel{
        panel5 = new JPanel();
        ImageIcon actIcon5 = new ImageIcon("images/c_kyung.jpg");
        act5 = new JButton();
-       act5.setBackground(Color.black);
        act5.setSize(200,200);
+       act5.setBorder(line);            
+       act5.addMouseListener(me);
+       panel5.setBackground(Color.black);
        panel5.add(act5);
-       panel5.setBounds(500, 400, 200, 200);  
+       panel5.setBounds(500, 400, 200, 210);  
        int offset5 = act5.getInsets().left;
        act5.setIcon(resizeIcon(actIcon5, act5.getWidth() - offset5, act5.getHeight() - offset5));
        
@@ -113,7 +141,7 @@ public class ComedyPanel extends JPanel{
                         " 빡친 테드는 존과 함께 자신의 인권(?)을 입증하기 위해\r\n" + 
                         " 승률 99.8% 변호사 사만다를 찾아가는데...\r\n" 
                       );
-                  
+                number = 1; 
                 explain.setEditable(false);
             }
          });
@@ -132,7 +160,7 @@ public class ComedyPanel extends JPanel{
                          " 갑자기 이상한 행동을 하는 태주를 의심하는 민국장과 만식을 뒤로 하고,  \r\n" + 
                          " 태주는 군견 알리와 함께 VIP를 찾아 나서는데…\r\n" 
                          );
-                   
+                 number = 2;   
                  explain.setEditable(false);
                 
              }
@@ -154,7 +182,7 @@ public class ComedyPanel extends JPanel{
                          " 세상 무서울 것 없던 '택일'은 장품반점에서 상상도 못한 이들을 만나\r\n" + 
                          " 진짜 세상을 맛보게 되는데...\r\n"
                          );
-                   
+                 number = 3;   
                  explain.setEditable(false);
              }
          });
@@ -177,7 +205,7 @@ public class ComedyPanel extends JPanel{
                          " 구매강요 온라인 쇼핑몰 메일에도 YES, \r\n" +
                          " 정말 이렇게 ‘YES’ 해도 되는 걸까?\r\n" 
                           );                       
-        
+                  number = 4; 
                  explain.setEditable(false);                
              
              }
@@ -200,14 +228,33 @@ public class ComedyPanel extends JPanel{
                          " 기준과 희열은 직접 발로 뛰는 수사에 나서기로 하고\r\n" + 
                          " 예측 불가능한 상황을 마주하게 되는데…\r\n" 
                          );
-                   
+                   number = 5; 
                    explain.setEditable(false);
              }
         });
+         
+         //자세히 보기 이벤트 처리
+         closer.addActionListener(new ActionListener() {
 
+         @Override
+         public void actionPerformed(ActionEvent e) {
+            if(number == 1) {
+               new BigTed();
+            } else if(number == 2) {
+               new BigMr();
+            } else if(number == 3) {
+               new BigSidong();
+            } else if(number == 4) {
+               new BigYes();
+            } else {
+               new BigKyung();
+            }
+         }
+            
+         }); 
        
        JButton back = new JButton("뒤로가기");
-      back.setBounds(10, 800, 100, 40);
+      back.setBounds(80, 700, 100, 40);
       back.addActionListener(new ActionListener() {
 
          @Override
@@ -224,7 +271,202 @@ public class ComedyPanel extends JPanel{
       frame3.add(panel4);
       frame3.add(panel5);
       frame3.add(back);
+      frame3.add(closer);
       frame3.add(this);
+   }
+   class BigTed extends JFrame {
+      public BigTed() {
+            setLayout(null);
+      
+          JPanel BigP1 = new JPanel();
+          ImageIcon BigI1 = new ImageIcon("images/c_ted2.jpg");
+          JButton BB1 = new JButton();
+          BB1.setSize(400,400);
+          BB1.setBorder(line);
+          BigP1.add(BB1);
+          BigP1.setSize(400, 410); 
+          BigP1.setBackground(Color.black);  
+          int offset2 = BB1.getInsets().left;
+          BB1.setIcon(resizeIcon(BigI1, BB1.getWidth() - offset2, BB1.getHeight() - offset2));
+          
+          JLabel inform = new JLabel("사진 눌러서 닫기");
+          inform.setBounds(150, 400, 200, 90);
+          inform.setFont(font1);
+          
+          add(BigP1);
+          add(inform);
+          
+          BB1.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+               setVisible(false);
+            }          
+          });
+          
+         setTitle("19곰 테드2");
+         setSize(410, 500);      
+         setLocationRelativeTo(null);
+         setVisible(true);
+         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);      
+
+      }
+   }
+   
+   class BigMr extends JFrame {
+      public BigMr() {
+            setLayout(null);
+      
+          JPanel BigP2 = new JPanel();
+          ImageIcon BigI2 = new ImageIcon("images/c_mr.jpg");
+          JButton BB2 = new JButton();
+          BB2.setSize(400,400);
+          BB2.setBorder(line);
+          BigP2.add(BB2);
+          BigP2.setSize(400, 410); 
+          BigP2.setBackground(Color.black); 
+          int offset2 = BB2.getInsets().left;
+          BB2.setIcon(resizeIcon(BigI2, BB2.getWidth() - offset2, BB2.getHeight() - offset2));
+          
+          JLabel inform = new JLabel("사진 눌러서 닫기");
+          inform.setBounds(150, 400, 200, 90);
+          inform.setFont(font1);
+          
+          add(BigP2);
+          add(inform);
+          
+          BB2.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+               setVisible(false);
+            }          
+          });
+          
+         setTitle("미스터 주");
+         setSize(410, 500);      
+         setLocationRelativeTo(null);
+         setVisible(true);
+         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);      
+
+      }
+   }
+   
+   class BigSidong extends JFrame {
+      public BigSidong() {
+            setLayout(null);
+      
+          JPanel BigP3 = new JPanel();
+          ImageIcon BigI3 = new ImageIcon("images/c_sidong.jpg");
+          JButton BB3 = new JButton();
+          BB3.setSize(400,400);
+          BB3.setBorder(line);
+          BigP3.add(BB3);
+          BigP3.setSize(400, 410); 
+          BigP3.setBackground(Color.black); 
+          int offset2 = BB3.getInsets().left;
+          BB3.setIcon(resizeIcon(BigI3, BB3.getWidth() - offset2, BB3.getHeight() - offset2));
+          
+          JLabel inform = new JLabel("사진 눌러서 닫기");
+          inform.setBounds(150, 400, 200, 90);
+          inform.setFont(font1);
+          
+          add(BigP3);
+          add(inform);
+          
+          BB3.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+               setVisible(false);
+            }          
+          });
+          
+         setTitle("시동");
+         setSize(410, 500);      
+         setLocationRelativeTo(null);
+         setVisible(true);
+         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);      
+
+      }
+   }
+   
+   class BigYes extends JFrame {
+      public BigYes() {
+            setLayout(null);
+      
+          JPanel BigP4 = new JPanel();
+          ImageIcon BigI4 = new ImageIcon("images/c_yes.jpg");
+          JButton BB4 = new JButton();
+          BB4.setSize(400,400);
+          BB4.setBorder(line);
+          BigP4.add(BB4);
+          BigP4.setSize(400, 410); 
+          BigP4.setBackground(Color.black);    
+          int offset2 = BB4.getInsets().left;
+          BB4.setIcon(resizeIcon(BigI4, BB4.getWidth() - offset2, BB4.getHeight() - offset2));
+          
+          JLabel inform = new JLabel("사진 눌러서 닫기");
+          inform.setBounds(150, 400, 200, 90);
+          inform.setFont(font1);
+          
+          add(BigP4);
+          add(inform);
+          
+          BB4.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+               setVisible(false);
+            }          
+          });
+          
+         setTitle("예스맨");
+         setSize(410, 500);      
+         setLocationRelativeTo(null);
+         setVisible(true);
+         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);      
+
+      }
+   }
+   
+   class BigKyung extends JFrame {
+      public BigKyung() {
+            setLayout(null);
+      
+          JPanel BigP5 = new JPanel();
+          ImageIcon BigI5 = new ImageIcon("images/c_kyung.jpg");
+          JButton BB5 = new JButton();
+          BB5.setSize(400,400);
+          BB5.setBorder(line);
+          BigP5.add(BB5);
+          BigP5.setSize(400, 410); 
+          BigP5.setBackground(Color.black);     
+          int offset2 = BB5.getInsets().left;
+          BB5.setIcon(resizeIcon(BigI5, BB5.getWidth() - offset2, BB5.getHeight() - offset2));
+          
+          JLabel inform = new JLabel("사진 눌러서 닫기");
+          inform.setBounds(150, 400, 200, 90);
+          inform.setFont(font1);
+          
+          add(BigP5);
+          add(inform);
+          
+          BB5.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+               setVisible(false);
+            }          
+          });
+          
+         setTitle("청년경찰");
+         setSize(410, 500);      
+         setLocationRelativeTo(null);
+         setVisible(true);
+         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);      
+
+      }
    }
 
 }

@@ -1,3 +1,4 @@
+
 package com.movieflex;
 
 import java.awt.CardLayout;
@@ -26,13 +27,28 @@ public class MainFrame extends JFrame{
       Container.setBackground(Color.black);
       Container.setBounds(0, 100, 900, 800);
       
+      // 영화사 로고 데코 
+      JPanel decoTitle = new JPanel();
+      decoTitle.setBounds(0, 800, 900, 50);
+      decoTitle.setBackground(Color.BLACK);
+      JLabel decoLabel = new JLabel("");
+      Font font = new Font("xfighters", Font.BOLD, 60);
+      decoLabel.setFont(font);
+      decoLabel.setForeground(Color.BLACK);
+      decoLabel.setHorizontalAlignment(JLabel.CENTER);
+      decoTitle.add(decoLabel);
+      
+      Image deco = new ImageIcon("images/full.PNG").getImage().getScaledInstance(800, 50, 10);
+      JLabel decoLabel1 = new JLabel(new ImageIcon(deco));       
+      decoTitle.add(decoLabel1);
+   
       //폰트
        Font font1 = new Font("맑은 고딕", Font.BOLD, 20);
       
       //맨위 배너
       JPanel BigTitle = new JPanel();
       BigTitle.setBounds(0, 0, 900, 100);
-//      BigTitle.setPreferredSize(new Dimension(900, 150));
+//    BigTitle.setPreferredSize(new Dimension(900, 150));
       BigTitle.setBackground(Color.BLACK);
        JLabel titleLabel = new JLabel("MOVIE FLEX");
        titleLabel.setFont(new Font("Serif", Font.BOLD, 60));
@@ -81,19 +97,19 @@ public class MainFrame extends JFrame{
              }    
           });
        
-       //안내문구
-       JPanel Welcome = new JPanel();
-       Welcome.setBackground(Color.black);
-//        Welcome.setPreferredSize(new Dimension(900, 400));
-       Welcome.setBounds(0, 150, 700, 100 );
-        Welcome.setBackground(Color.BLACK);
+       	//안내문구
+       	JPanel Welcome = new JPanel();
+       	Welcome.setBackground(Color.black);
+//     	Welcome.setPreferredSize(new Dimension(900, 400));
+       	Welcome.setBounds(0, 150, 700, 100 );
+       	Welcome.setBackground(Color.BLACK);
         JLabel welComeLabel = new JLabel("반갑습니다! 장르를 선택해 주세요.");
         welComeLabel.setFont(new Font("SansSerif", Font.BOLD, 35));
         welComeLabel.setForeground(Color.white);
         welComeLabel.setHorizontalAlignment(JLabel.CENTER);
         Welcome.add(welComeLabel);
         
-        //웃는 이미지
+      //웃는 이미지
       Image icon = new ImageIcon("images/haha.PNG").getImage().getScaledInstance(150, 150, 0);
       JLabel label = new JLabel(new ImageIcon(icon));       
       Welcome.add(label);
@@ -110,20 +126,23 @@ public class MainFrame extends JFrame{
       //추천 영화 이미지
       JPanel ImagePanel1 = new JPanel();
       ImagePanel1.setBounds(100, 500, 200, 200);
-       Image Rmovie1 = new ImageIcon("images/a_mission.jpg").getImage().getScaledInstance(400, 400, 0);
+      Image Rmovie1 = new ImageIcon("images/a_mission.jpg").getImage().getScaledInstance(400, 400, 0);
       JLabel Rlabel1 = new JLabel(new ImageIcon(Rmovie1));
+      ImagePanel1.setBackground(Color.black);
       ImagePanel1.add(Rlabel1);
       
       JPanel ImagePanel2 = new JPanel();
       ImagePanel2.setBounds(100, 500, 200, 200);
       Image Rmovie2 = new ImageIcon("images/c_ted2.jpg").getImage().getScaledInstance(400, 400, 0);
       JLabel Rlabel2 = new JLabel(new ImageIcon(Rmovie2));
+      ImagePanel2.setBackground(Color.black);
       ImagePanel2.add(Rlabel2);
       
       JPanel ImagePanel3 = new JPanel();
       ImagePanel3.setBounds(100, 500, 200, 200);
       Image Rmovie3 = new ImageIcon("images/r_about.jpg").getImage().getScaledInstance(400, 400, 0);
       JLabel Rlabel3 = new JLabel(new ImageIcon(Rmovie3));
+      ImagePanel3.setBackground(Color.black);
       ImagePanel3.add(Rlabel3);
       
       
@@ -163,8 +182,10 @@ public class MainFrame extends JFrame{
       Container.add(thro);
       Container.add(buttons);
       
-       frame.add(BigTitle);
-       frame.add(Container);
+      frame.add(decoTitle); // 영화사 로고 데코 
+      
+      frame.add(BigTitle);
+      frame.add(Container);
       
       frame.setSize(900, 900);
       frame.setResizable(false);
