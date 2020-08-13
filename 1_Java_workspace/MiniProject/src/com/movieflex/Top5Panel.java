@@ -6,14 +6,17 @@ import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JSlider;
 import javax.swing.JTextArea;
 import javax.swing.border.LineBorder;
 
@@ -23,7 +26,10 @@ public class Top5Panel extends JPanel{
       Image img = ((ImageIcon) actIcon1).getImage();
       Image resizedImage = img.getScaledInstance(resizedWidth,  resizedHeight, java.awt.Image.SCALE_SMOOTH);
       return new ImageIcon(resizedImage);
-   }   
+   }
+   //평점 요소들
+   JSlider slider;
+   JLabel scoreMy, resultMy, number;
    //버튼 테두리
    private LineBorder line = new LineBorder(Color.black,2,false);
    //마우스 이벤트
@@ -46,8 +52,8 @@ public class Top5Panel extends JPanel{
       setSize(900, 900);   
       setBackground(Color.black);      
 
-      JButton act1, act2, act3, act4, act5;
-      JPanel panel1, panel2, panel3, panel4, panel5;
+      JButton act1, act2, act3, act4, act5, cgv;
+      JPanel panel1, panel2, panel3, panel4, panel5, cgvPanel;
       JLabel rank1, rank2, rank3, rank4, rank5;
 
       //폰트
@@ -62,26 +68,57 @@ public class Top5Panel extends JPanel{
       explain.setEditable(false);
       explain.setFont(font1); 
       
+      // 영화 홈페이지로 가기
+      cgvPanel = new JPanel();
+      ImageIcon cgvIcon = new ImageIcon("images/cgv.png");
+      cgv = new JButton();
+//    cgv.setSize(110,40);
+      cgv.setBorder(line);
+      cgv.addMouseListener(me);
+      cgv.setBackground(Color.black);
+      cgvPanel.add(cgv);
+      cgv.setBounds(720, 650, 110, 40);
+      
+      int cgvv = cgv.getInsets().left;
+      cgv.setIcon(resizeIcon(cgvIcon, cgv.getWidth() - cgvv, cgv.getHeight() - cgvv));
+      
+      cgv.addActionListener(new ActionListener() {
+         @Override
+       public void actionPerformed(ActionEvent e) {
+            
+            try {
+             // 크롬 사용
+            Process p = Runtime.getRuntime().exec("C:\\Program Files (x86)\\Google\\Chrome\\Application\\Chrome.exe \"http://www.cgv.co.kr/?NaPm=ct%3Dkdrcjjbx%7Cci%3Dcheckout%7Ctr%3Dds%7Ctrx%3D%7Chk%3D13fe797e524d31860fab417dd0509d1a0f794c58\"");
+            
+             // 익스플로러 사용
+//            Process p = Runtime.getRuntime().exec("C:\\Program Files\\Internet Explorer\\iexplore.exe \"http://www.cgv.co.kr/?NaPm=ct%3Dkdrcjjbx%7Cci%3Dcheckout%7Ctr%3Dds%7Ctrx%3D%7Chk%3D13fe797e524d31860fab417dd0509d1a0f794c58\"");
+            Thread.sleep(5000);
+            } catch (IOException | InterruptedException e1) {
+            e1.printStackTrace();
+         }
+         }
+      });
+      
       //순위 추가
       rank1 = new JLabel("1위");
       rank1.setFont(font2);
-      rank1.setForeground(Color.white);
+      rank1.setForeground(Color.WHITE);
       
       rank2 = new JLabel("2위");
       rank2.setFont(font2);
-      rank2.setForeground(Color.white);
+      rank2.setForeground(Color.WHITE);
       
       rank3 = new JLabel("3위");
       rank3.setFont(font2);
-      rank3.setForeground(Color.white);
+      rank3.setForeground(Color.WHITE);
       
       rank4 = new JLabel("4위");
       rank4.setFont(font2);
-      rank4.setForeground(Color.white);
+      rank4.setForeground(Color.WHITE);
       
       rank5 = new JLabel("5위");
       rank5.setFont(font2);
-      rank5.setForeground(Color.white);
+      rank5.setForeground(Color.WHITE);
       
       // 어벤져스
       panel1 = new JPanel();
@@ -93,7 +130,7 @@ public class Top5Panel extends JPanel{
       panel1.setBackground(Color.black);
       panel1.add(rank1);
       panel1.add(act1);
-      panel1.setBounds(100, 150, 200, 225);      
+      panel1.setBounds(100, 150, 200, 240);      
       int offset1 = act1.getInsets().left;
       act1.setIcon(resizeIcon(actIcon1, act1.getWidth() - offset1, act1.getHeight() - offset1));
            
@@ -108,7 +145,7 @@ public class Top5Panel extends JPanel{
       panel2.setBackground(Color.black);
       panel2.add(rank2);
       panel2.add(act2);    
-      panel2.setBounds(370, 150, 200, 225);    
+      panel2.setBounds(370, 150, 200, 240);    
       int offset2 = act2.getInsets().left;
       act2.setIcon(resizeIcon(actIcon2, act2.getWidth() - offset2, act2.getHeight() - offset2));
 
@@ -122,7 +159,7 @@ public class Top5Panel extends JPanel{
       panel3.setBackground(Color.black);
       panel3.add(rank3);
       panel3.add(act3);   
-      panel3.setBounds(650, 150, 200, 225);    
+      panel3.setBounds(650, 150, 200, 240);    
       int offset3 = act3.getInsets().left;
       act3.setIcon(resizeIcon(actIcon3, act3.getWidth() - offset3, act3.getHeight() - offset3));
 
@@ -136,7 +173,7 @@ public class Top5Panel extends JPanel{
       panel4.setBackground(Color.black);
       panel4.add(rank4);
       panel4.add(act4);
-      panel4.setBounds(200, 400, 200, 225);   
+      panel4.setBounds(200, 400, 200, 240);   
       int offset4 = act4.getInsets().left;
       act4.setIcon(resizeIcon(actIcon4, act4.getWidth() - offset4, act4.getHeight() - offset4));
 
@@ -150,7 +187,7 @@ public class Top5Panel extends JPanel{
       panel5.setBackground(Color.black);
       panel5.add(rank5);
       panel5.add(act5);    
-      panel5.setBounds(500, 400, 200, 225);  
+      panel5.setBounds(500, 400, 200, 240);  
       int offset5 = act5.getInsets().left;
       act5.setIcon(resizeIcon(actIcon5, act5.getWidth() - offset5, act5.getHeight() - offset5));
 
@@ -246,7 +283,7 @@ public class Top5Panel extends JPanel{
 
          }
       });
-
+      
       act3.addActionListener(new ActionListener() {
          @Override
          public void actionPerformed(ActionEvent e) {
@@ -380,9 +417,10 @@ public class Top5Panel extends JPanel{
             explain.setEditable(false);
          }
       });
-
-
-
+      //평점주기 버튼
+      JButton score = new JButton("나도 평점 주기");
+      score.setBounds(720, 750, 120, 40);
+      
       JButton back = new JButton("뒤로가기");
       back.setBounds(80, 700, 100, 40);
       back.addActionListener(new ActionListener() {
@@ -393,7 +431,16 @@ public class Top5Panel extends JPanel{
             frame3.dispose();
          }      
       });
+      
+      //평점주기 버튼 이벤트 처리
+      score.addActionListener(new ActionListener() {
 
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			new ScoreFrame();
+		}
+      });
+      
       frame3.add(scr1);
       frame3.add(panel1);
       frame3.add(panel2);
@@ -401,7 +448,61 @@ public class Top5Panel extends JPanel{
       frame3.add(panel4);
       frame3.add(panel5);
       frame3.add(back);
+      frame3.add(cgv);
+      frame3.add(score);
       frame3.add(this);
    }
+   
+   class ScoreFrame extends JFrame {
+       public ScoreFrame() {
+	     	setSize(300, 300);
+	        setLayout(null);
+	             
+	        scoreMy = new JLabel("나의 평점은 ?");
+	        add(scoreMy);
+          
+          	slider = new JSlider(0, 10, 5);
+  			slider.setMinorTickSpacing(1);  //작은 눈금 간격
+  			slider.setPaintTicks(true); //눈금 표시
+  			slider.setPaintLabels(true); //눈금에 값 표시
+  			slider.setMajorTickSpacing(10); //큰 눈금 간격
+  			add(slider);
+          
+          JButton btn1 = new JButton("저장");
+          add(btn1);
+          
+          resultMy = new JLabel("점수 : ");
+          add(resultMy);
+          number = new JLabel();
+          add(number);
+          
 
+          scoreMy.setBounds(20, 10, 100, 40);
+          slider.setBounds(40, 70, 200, 50);
+          btn1.setBounds(120, 125, 60, 40);
+          resultMy.setBounds(20, 200, 40, 30);   
+          number.setBounds(65, 200, 30, 30);
+          
+          setTitle("관람 후 점수 등록");    
+          setLocationRelativeTo(null);
+          setVisible(true);
+          setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);         
+          
+          btn1.addActionListener(new ActionListener() {
+             
+             @Override
+             public void actionPerformed(ActionEvent e) { 
+             		number.setText(slider.getValue() + "");
+             		try {
+							Thread.sleep(300);
+						} catch (InterruptedException e1) {
+							e1.printStackTrace();
+						}
+             		JOptionPane.showMessageDialog(null, "평점이 등록되었습니다!", "MovieFlex", JOptionPane.INFORMATION_MESSAGE);
+             		setVisible(false);                         
+             		return;
+                	}                       
+          });
+       }
+    }
 }

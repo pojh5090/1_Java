@@ -62,67 +62,47 @@ public class ComedyPanel extends JPanel{
        closer.setBounds(720, 700, 110, 40);
      
        //테드
-       panel1 = new JPanel();
        ImageIcon actIcon1 = new ImageIcon("images/c_ted2.jpg");
        act1 = new JButton();
-       act1.setSize(200,200);
        act1.setBorder(line);            
        act1.addMouseListener(me);
-       panel1.setBackground(Color.black);
-       panel1.add(act1);
-       panel1.setBounds(100, 150, 200, 210);      
+       act1.setBounds(100, 150, 200, 210);      
        int offset1 = act1.getInsets().left;
        act1.setIcon(resizeIcon(actIcon1, act1.getWidth() - offset1, act1.getHeight() - offset1));
        
        //미스터주
-       panel2 = new JPanel();
        ImageIcon actIcon2 = new ImageIcon("images/c_mr.jpg");
        act2 = new JButton();
-       act2.setSize(200,200);
        act2.setBorder(line);            
        act2.addMouseListener(me);
-       panel2.setBackground(Color.black);
-       panel2.add(act2);
-       panel2.setBounds(370, 150, 200, 200);      
+       act2.setBounds(370, 150, 200, 200);      
        int offset2 = act2.getInsets().left;
        act2.setIcon(resizeIcon(actIcon2, act2.getWidth() - offset2, act2.getHeight() - offset2));
        
        //시동
-       panel3 = new JPanel();
        ImageIcon actIcon3 = new ImageIcon("images/c_sidong.jpg");
        act3 = new JButton();
-       act3.setSize(200,200);
        act3.setBorder(line);            
        act3.addMouseListener(me);
-       panel3.setBackground(Color.black);
-       panel3.add(act3);
-       panel3.setBounds(650, 150, 200, 210);   
+       act3.setBounds(650, 150, 200, 210);   
        int offset3 = act3.getInsets().left;
        act3.setIcon(resizeIcon(actIcon3, act3.getWidth() - offset3, act3.getHeight() - offset3));
 
        //예스맨
-       panel4 = new JPanel();
        ImageIcon actIcon4 = new ImageIcon("images/c_yes.jpg");
        act4 = new JButton();
-       act4.setSize(200,200);
        act4.setBorder(line);            
        act4.addMouseListener(me);
-       panel4.setBackground(Color.black);
-       panel4.add(act4);
-       panel4.setBounds(200, 400, 200, 210);   
+       act4.setBounds(200, 400, 200, 210);   
        int offset4 = act4.getInsets().left;
        act4.setIcon(resizeIcon(actIcon4, act4.getWidth() - offset4, act4.getHeight() - offset4));
        
        //청년경찰
-       panel5 = new JPanel();
        ImageIcon actIcon5 = new ImageIcon("images/c_kyung.jpg");
        act5 = new JButton();
-       act5.setSize(200,200);
        act5.setBorder(line);            
        act5.addMouseListener(me);
-       panel5.setBackground(Color.black);
-       panel5.add(act5);
-       panel5.setBounds(500, 400, 200, 210);  
+       act5.setBounds(500, 400, 200, 210);  
        int offset5 = act5.getInsets().left;
        act5.setIcon(resizeIcon(actIcon5, act5.getWidth() - offset5, act5.getHeight() - offset5));
        
@@ -265,11 +245,11 @@ public class ComedyPanel extends JPanel{
       });
       
       frame3.add(scr1);
-      frame3.add(panel1);
-      frame3.add(panel2);
-      frame3.add(panel3);
-      frame3.add(panel4);
-      frame3.add(panel5);
+      frame3.add(act1);
+      frame3.add(act2);
+      frame3.add(act3);
+      frame3.add(act4);
+      frame3.add(act5);
       frame3.add(back);
       frame3.add(closer);
       frame3.add(this);

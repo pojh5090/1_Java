@@ -79,54 +79,36 @@ public class HorrorPanel extends JPanel{
       closer.setFont(font1);
       closer.setBounds(720, 700, 110, 40);
       
-       panel1 = new JPanel();
        ImageIcon actIcon1 = new ImageIcon("images/s_anna.jpg");
        act1 = new JButton();
-       act1.setSize(200,200);
        act1.setBorder(line);            
        act1.addMouseListener(me);
-       panel1.setBackground(Color.black);
-       panel1.add(act1);
-       panel1.setBounds(100, 150, 200, 210);      
+       act1.setBounds(100, 150, 200, 210);      
        int offset1 = act1.getInsets().left;
        act1.setIcon(resizeIcon(actIcon1, act1.getWidth() - offset1, act1.getHeight() - offset1));
-       
-       
-       panel2 = new JPanel();
+           
        ImageIcon actIcon2 = new ImageIcon("images/s_con.jpg");
        act2 = new JButton();
-       act2.setSize(200,200);
        act2.setBorder(line);            
        act2.addMouseListener(me);
-       panel2.setBackground(Color.black);
-       panel2.add(act2);
-       panel2.setBounds(370, 150, 200, 210);      
+       act2.setBounds(370, 150, 200, 210);      
        int offset2 = act2.getInsets().left;
        act2.setIcon(resizeIcon(actIcon2, act2.getWidth() - offset2, act2.getHeight() - offset2));
        
-      
-       panel3 = new JPanel();
+
        ImageIcon actIcon3 = new ImageIcon("images/s_creep.jpg");
        act3 = new JButton();
-       act3.setSize(200,200);
        act3.setBorder(line);            
        act3.addMouseListener(me);
-       panel3.setBackground(Color.black);
-       panel3.add(act3);
-       panel3.setBounds(650, 150, 200, 210);   
+       act3.setBounds(650, 150, 200, 210);   
        int offset3 = act3.getInsets().left;
        act3.setIcon(resizeIcon(actIcon3, act3.getWidth() - offset3, act3.getHeight() - offset3));
 
-       
-       panel4 = new JPanel();
        ImageIcon actIcon4 = new ImageIcon("images/s_gon.jpg");
        act4 = new JButton();
-       act4.setSize(200,200);
        act4.setBorder(line);            
        act4.addMouseListener(me);
-       panel4.setBackground(Color.black);
-       panel4.add(act4);
-       panel4.setBounds(200, 400, 200, 210);   
+       act4.setBounds(200, 400, 200, 210);   
        int offset4 = act4.getInsets().left;
        act4.setIcon(resizeIcon(actIcon4, act4.getWidth() - offset4, act4.getHeight() - offset4));
        
@@ -283,10 +265,10 @@ public class HorrorPanel extends JPanel{
       });
       
       frame5.add(scr1);
-      frame5.add(panel1);
-      frame5.add(panel2);
-      frame5.add(panel3);
-      frame5.add(panel4);
+      frame5.add(act1);
+      frame5.add(act2);
+      frame5.add(act3);
+      frame5.add(act4);
       frame5.add(panel5);
       frame5.add(back);
       frame5.add(closer);
@@ -481,63 +463,71 @@ public class HorrorPanel extends JPanel{
          setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);      
 
       }
-   }
-  
+   }  
    class AgeFrame extends JFrame {
       public AgeFrame() {
             setLayout(null);
             
             age = new JLabel("생년월일");
-         add(age);
+            add(age);
          
-         inputAge = new JTextField();
-         add(inputAge);
+            inputAge = new JTextField();
+            add(inputAge);
          
-         JButton btn1 = new JButton("확인");
-         add(btn1);
-
-         age.setBounds(20, 10, 70, 40);
-         inputAge.setBounds(95, 10, 120, 30);
-
-         btn1.setBounds(230, 10, 70, 30);
-         
-         setTitle("나이 확인 창");
-         setSize(400, 150);      
-         setLocationRelativeTo(null);
-         setVisible(true);
-         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-      
-         
-         btn1.addActionListener(new ActionListener() {
+            JButton btn1 = new JButton("확인");
+            add(btn1);
             
-            @Override
-            public void actionPerformed(ActionEvent e) {   
-               birth = inputAge.getText().trim();
-               Ibirth = Integer.parseInt(birth);               
-               if(Ibirth < 2003) {
-                  JOptionPane.showMessageDialog(null, "영화 열람이 가능합니다!", "MovieFlex", JOptionPane.DEFAULT_OPTION);
-                  setVisible(false);    
-                  explain.append("<디아더스>" + "       "  + "\r\n\r\n" +
-                                "빛을 보지 못하는 희귀병을 앓는 두 아이와\r\n" + 
-                                " 그런 아이들을 홀로 지키며 어둠 속에서만 살아가는 여인.\r\n" + 
-                                " 어느 날 3명의 새로운 하인이 그녀의 집에 찾아왔다.\r\n" + 
-                                " \r\n" + 
-                                " 잠이 들면 들려 오는 기괴한 속삭임.\r\n" + 
-                                " 아무도 없는 방에서 흘러나오는 피아노 소리.\r\n" + 
-                                " 위 층에서 들려오는 아이들의 발소리…\r\n" + 
-                                " \r\n" + 
-                                " 그들이 이 집에 들어온 뒤,\r\n" + 
-                                " 기이한 일들이 일어나기 시작했다!");   
-                        explain.setEditable(false);
-                        return;
-               } else {
-                  JOptionPane.showMessageDialog(null, "영화 열람이 불가능한 나이입니다.", "MovieFlex", JOptionPane.ERROR_MESSAGE);
-                  setVisible(false);
-                  explain.setText("열람 불가");   
-                        explain.setEditable(false);
-                        return;
-               }               
-            }            
+            JLabel example = new JLabel("예 ) 19940312");
+            example.setForeground(Color.red);
+            add(example);
+
+            age.setBounds(20, 10, 70, 40);
+            inputAge.setBounds(95, 10, 120, 30);
+            btn1.setBounds(230, 10, 70, 30);
+            example.setBounds(95, 40, 100, 30);
+         
+            setTitle("나이 확인 창");
+            setSize(400, 150);      
+            setLocationRelativeTo(null);
+            setVisible(true);
+            setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+              
+            btn1.addActionListener(new ActionListener() {           
+            	@Override
+            	public void actionPerformed(ActionEvent e) {   
+            	try {
+ 	               birth = inputAge.getText().trim();
+ 	               Ibirth = Integer.parseInt(birth);  
+ 	               if(Ibirth < 20030101) {
+ 	                  JOptionPane.showMessageDialog(null, "영화 열람이 가능합니다!", "MovieFlex", JOptionPane.DEFAULT_OPTION);
+ 	                  setVisible(false);    
+ 	                  explain.append("<디아더스>" + "       "  + "\r\n\r\n" +
+ 	                                "빛을 보지 못하는 희귀병을 앓는 두 아이와\r\n" + 
+ 	                                " 그런 아이들을 홀로 지키며 어둠 속에서만 살아가는 여인.\r\n" + 
+ 	                                " 어느 날 3명의 새로운 하인이 그녀의 집에 찾아왔다.\r\n" + 
+ 	                                " \r\n" + 
+ 	                                " 잠이 들면 들려 오는 기괴한 속삭임.\r\n" + 
+ 	                                " 아무도 없는 방에서 흘러나오는 피아노 소리.\r\n" + 
+ 	                                " 위 층에서 들려오는 아이들의 발소리…\r\n" + 
+ 	                                " \r\n" + 
+ 	                                " 그들이 이 집에 들어온 뒤,\r\n" + 
+ 	                                " 기이한 일들이 일어나기 시작했다!");   
+ 	                        explain.setEditable(false);
+ 	                        return;
+ 	               } else if(Ibirth >= 20030101) {
+ 	                  JOptionPane.showMessageDialog(null, "영화 열람이 불가능한 나이입니다.", "MovieFlex", JOptionPane.ERROR_MESSAGE);
+ 	                  setVisible(false);
+ 	                  explain.setText("열람 불가");   
+ 	                  explain.setEditable(false);
+ 	                  return;
+ 	               }  else {           
+// 	            	   JOptionPane.showMessageDialog(null, "생년월일을 입력해주세요!", "MovieFlex", JOptionPane.WARNING_MESSAGE);
+// 		               setVisible(false); 
+ 	               }
+            	} catch (NumberFormatException e1) {
+            		JOptionPane.showMessageDialog(null, "생년월일을 입력해주세요!", "MovieFlex", JOptionPane.WARNING_MESSAGE); 
+            	}
+	          }            
          });
       }
    }
