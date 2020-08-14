@@ -71,7 +71,7 @@ public class ScoreFrame {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}	
 	
-	public class ScoreFrame$ActionHandler implements ActionListener{
+	class ScoreFrame$ActionHandler implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			String getJava = javaScore.getText();
